@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              x:Class="e.Metas"
              Title="Metas"
-             BackgroundImageSource="fundo2.png">
+             BackgroundImageSource="fundo3.png">
     <ContentPage.Resources>
     <Style TargetType="Grid">
         <Setter Property="VisualStateManager.VisualStateGroups">
@@ -13,7 +13,7 @@
                     <VisualState x:Name="Selected">
                         <VisualState.Setters>
                             <Setter Property="BackgroundColor"
-                                        Value="Purple" />
+                                        Value="Green" />
                         </VisualState.Setters>
                     </VisualState>
                 </VisualStateGroup>
@@ -49,7 +49,7 @@
                         <CheckBox IsChecked="False"/>
                             <Label Text="aaaaaaaaaa"/>
                         </StackLayout>
-                        <Button Text="Pegada Ecológica" VerticalOptions="End" Clicked="Button_Clicked"/>
+                        <Button Text="Pegada Ecológica" VerticalOptions="End" Clicked="Button_Clicked" BackgroundColor="#a3bc3a"/>
                     </StackLayout>
                 </ScrollView>
             </Grid>

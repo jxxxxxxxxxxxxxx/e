@@ -8,8 +8,8 @@
             <Label Text="Selecione uma forma de Menu"
                 VerticalOptions="Center" 
                 HorizontalOptions="Center" />
-            <Button Text="Lateral" Clicked="Lateral"/>
-            <Button Text="Inferior" Clicked="Inferior"/>
+            <Button Text="Lateral" Clicked="Lateral" BackgroundColor="#a3bc3a"/>
+            <Button Text="Inferior" Clicked="Inferior" BackgroundColor="#a3bc3a"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

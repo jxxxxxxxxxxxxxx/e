@@ -9,6 +9,7 @@ using System.Globalization;
 using System.Collections.ObjectModel;
 using e.Modelo;
 using Xamarin.Essentials;
+using static e.Metas;
 
 namespace e
 {
@@ -35,6 +36,7 @@ namespace e
             Dias = new ObservableCollection<Dia>();
             PreencherDiasDaSemana();
             DiasCollectionView.ItemsSource = Dias;
+            
         }
         private void PreencherDiasDaSemana()
         {
@@ -55,23 +57,29 @@ namespace e
                     WidthRequest = larguraPorDia
                 });
             }
+            foreach (var dia in Dias)
+            {
+                dia.IsSelecionado = false;
+                dia.TextoCor = "White";
+            }
         }
         private void DiasCollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             foreach (var dia in Dias)
             {
                 dia.IsSelecionado = false;
-                dia.TextoCor = "Wheat";
+                dia.TextoCor = "White";
             }
             var diaSelecionado = (Dia)e.CurrentSelection[0];
             if (e.CurrentSelection.Count > 0)
             {
                 diaSelecionado.IsSelecionado = true;
-                diaSelecionado.TextoCor = "Red";
+                diaSelecionado.TextoCor = "#acbd24";
             }
             DiasCollectionView.ItemsSource = null;
             DiasCollectionView.ItemsSource = Dias;
             DiaSelecionadoLabel.Text = $"Você selecionou {diaSelecionado.NomeDiaex}, dia {diaSelecionado.NumeroDiaMes} de {diaSelecionado.NomeMes}";
+            DiaSelecionadoLabel.FontFamily = "sans-serif-thin";
         }
 
         private void Button_Clicked(object sender, EventArgs e)

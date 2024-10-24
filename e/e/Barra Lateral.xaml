@@ -7,10 +7,10 @@
              x:Class="e.Barra_Lateral">
     <Shell.Resources>
         <Style x:Key="style2" TargetType="Element">
-            <Setter Property="Shell.BackgroundColor" Value="Purple" />
+            <Setter Property="Shell.BackgroundColor" Value="White" />
             <Setter Property="Shell.ForegroundColor" Value="LawnGreen" />
-            <Setter Property="Shell.TitleColor" Value="GreenYellow" />
-            <Setter Property="Shell.DisabledColor" Value="Purple" />
+            <Setter Property="Shell.TitleColor" Value="#98bd3c" />
+            <Setter Property="Shell.DisabledColor" Value="white" />
             <Setter Property="Shell.UnselectedColor" Value="Aqua" />
             <Setter Property="Shell.FlyoutBackgroundColor" Value="Green" />
         </Style>

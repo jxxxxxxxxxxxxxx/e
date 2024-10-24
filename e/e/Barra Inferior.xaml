@@ -11,13 +11,13 @@
             <Setter Property="Shell.BackgroundColor" 
                 Value="#f0fff0" />
             <Setter Property="Shell.ForegroundColor" 
-                Value="#009900" />
+                Value="#80b029" />
             <Setter Property="Shell.TitleColor" 
-                Value="#009900" />
+                Value="#80b029" />
             <Setter Property="Shell.DisabledColor" 
-                Value="#009900" />
+                Value="#80b029" />
             <Setter Property="Shell.UnselectedColor" 
-                Value="#009900" />
+                Value="#80b029" />
         </Style>
     </Shell.Resources>
     <TabBar Style="{StaticResource Style1}">
