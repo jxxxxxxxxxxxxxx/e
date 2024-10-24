@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             x:Class="e.Metas"
+             Title="Metas">
+    <ContentPage.Content>
+        <ScrollView Orientation="Both">
+            <Grid RowDefinitions="Auto, *" Padding="20, 0, 20, 0">
+                <CollectionView x:Name="DiasCollectionView" SelectionMode="Single"
+                        SelectionChanged="DiasCollectionView_SelectionChanged"
+                        Grid.Row="0" HeightRequest="100">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Horizontal" />
+                    </CollectionView.ItemsLayout>
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout HorizontalOptions="FillAndExpand" WidthRequest="{Binding WidthRequest}" VerticalOptions="Center" Padding="0" Spacing="5">
+                                <Label Text="{Binding NomeDia}" FontSize="Medium" HorizontalOptions="Center" TextColor="Wheat"/>
+                                <Label Text="{Binding NumeroDiaMes}" FontSize="Large" HorizontalOptions="Center" TextColor="Wheat"/>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <ScrollView Grid.Row="1">
+                    <StackLayout>
+                        <Label x:Name="DiaSelecionadoLabel" Text="Selecione um dia"
+                       HorizontalOptions="Center" VerticalOptions="Start"
+                       FontSize="Large" Padding="10"/>
+                        <Button Text="Pegada Ecológica" VerticalOptions="End" Clicked="Button_Clicked"/>
+                    </StackLayout>
+                </ScrollView>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

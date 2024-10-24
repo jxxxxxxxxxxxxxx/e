@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:pages="clr-namespace:e"
+       xmlns:locais="clr-namespace:e.Locais"
+       Title="e"
+             x:Class="e.Barra_Lateral">
+    <Shell.Resources>
+        <Style x:Key="style2" TargetType="Element">
+            <Setter Property="Shell.BackgroundColor" Value="Purple" />
+            <Setter Property="Shell.ForegroundColor" Value="LawnGreen" />
+            <Setter Property="Shell.TitleColor" Value="GreenYellow" />
+            <Setter Property="Shell.DisabledColor" Value="Purple" />
+            <Setter Property="Shell.UnselectedColor" Value="Aqua" />
+            <Setter Property="Shell.FlyoutBackgroundColor" Value="Green" />
+        </Style>
+    </Shell.Resources>
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid Padding="10" BackgroundColor="Green">
+                <Label Text="{Binding Title}" TextColor="Black"/>
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+
+    <Shell.FlyoutHeader>
+        <pages:HeaderView/>
+    </Shell.FlyoutHeader>
+
+    <FlyoutItem Title="Metas" Icon="sobr.png" Style="{StaticResource style2}">
+        <ShellContent ContentTemplate="{DataTemplate pages:Metas}"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Busca" Icon="sobr.png">
+        <ShellContent ContentTemplate="{DataTemplate pages:Busca}"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Configurações" Icon="sobr.png">
+        <ShellContent ContentTemplate="{DataTemplate pages:Configs}"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Sobre" Icon="sobr.png">
+        <ShellContent ContentTemplate="{DataTemplate pages:Sobre}"/>
+    </FlyoutItem>
+</Shell>
