@@ -15,7 +15,6 @@ namespace e
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Metas : ContentPage
     {
-        // Classe para representar cada dia
         public class Dia
         {
             public string NomeDia { get; set; }
@@ -23,15 +22,16 @@ namespace e
             public string NomeMes { get; set; }
             public int NumeroDiaMes { get; set; }
             public double WidthRequest { get; set; }
+            public string Textocor { get; set; }
+            public string TextoCor { get; internal set; }
+            public bool IsSelecionado { get; set; }
         }
 
-        // Coleção observável para os dias da semana
         public ObservableCollection<Dia> Dias { get; set; }
 
         public Metas()
         {
             InitializeComponent();
-
             Dias = new ObservableCollection<Dia>();
             PreencherDiasDaSemana();
             DiasCollectionView.ItemsSource = Dias;
@@ -58,7 +58,19 @@ namespace e
         }
         private void DiasCollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var diaSelecionado = e.CurrentSelection[0] as Dia;
+            foreach (var dia in Dias)
+            {
+                dia.IsSelecionado = false;
+                dia.TextoCor = "Wheat";
+            }
+            var diaSelecionado = (Dia)e.CurrentSelection[0];
+            if (e.CurrentSelection.Count > 0)
+            {
+                diaSelecionado.IsSelecionado = true;
+                diaSelecionado.TextoCor = "Red";
+            }
+            DiasCollectionView.ItemsSource = null;
+            DiasCollectionView.ItemsSource = Dias;
             DiaSelecionadoLabel.Text = $"Você selecionou {diaSelecionado.NomeDiaex}, dia {diaSelecionado.NumeroDiaMes} de {diaSelecionado.NomeMes}";
         }
 

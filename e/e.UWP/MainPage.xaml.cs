@@ -19,7 +19,7 @@ namespace e.UWP
     {
         public MainPage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
 
             LoadApplication(new e.App());
         }

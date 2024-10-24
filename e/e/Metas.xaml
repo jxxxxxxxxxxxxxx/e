@@ -3,6 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              x:Class="e.Metas"
              Title="Metas">
+    <ContentPage.Resources>
+    <Style TargetType="Grid">
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Selected">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor"
+                                        Value="Purple" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+        </Style>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <ScrollView Orientation="Both">
             <Grid RowDefinitions="Auto, *" Padding="20, 0, 20, 0">
@@ -16,8 +33,8 @@
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <StackLayout HorizontalOptions="FillAndExpand" WidthRequest="{Binding WidthRequest}" VerticalOptions="Center" Padding="0" Spacing="5">
-                                <Label Text="{Binding NomeDia}" FontSize="Medium" HorizontalOptions="Center" TextColor="Wheat"/>
-                                <Label Text="{Binding NumeroDiaMes}" FontSize="Large" HorizontalOptions="Center" TextColor="Wheat"/>
+                                <Label Text="{Binding NomeDia}" FontSize="Medium" HorizontalOptions="Center" TextColor="{Binding TextoCor}"/>
+                                <Label Text="{Binding NumeroDiaMes}" FontSize="Large" HorizontalOptions="Center" TextColor="{Binding TextoCor}"/>
                             </StackLayout>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
@@ -27,6 +44,10 @@
                         <Label x:Name="DiaSelecionadoLabel" Text="Selecione um dia"
                        HorizontalOptions="Center" VerticalOptions="Start"
                        FontSize="Large" Padding="10"/>
+                        <StackLayout Orientation="Horizontal" Padding="40">
+                        <CheckBox IsChecked="False"/>
+                            <Label Text="aaaaaaaaaa"/>
+                        </StackLayout>
                         <Button Text="Pegada Ecológica" VerticalOptions="End" Clicked="Button_Clicked"/>
                     </StackLayout>
                 </ScrollView>
