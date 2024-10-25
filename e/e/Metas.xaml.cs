@@ -21,7 +21,9 @@ namespace e
             public string NomeDia { get; set; }
             public string NomeDiaex { get; set; }
             public string NomeMes { get; set; }
+            public string Numeromes { get; set; }
             public int NumeroDiaMes { get; set; }
+            public string Ano { get; set; }
             public double WidthRequest { get; set; }
             public string Textocor { get; set; }
             public string TextoCor { get; internal set; }
@@ -54,6 +56,8 @@ namespace e
                     NomeDia = diaAtual.ToString("ddd", new CultureInfo("pt-BR")),
                     NomeDiaex = diaAtual.ToString("dddd", new CultureInfo("pt-BR")),
                     NumeroDiaMes = diaAtual.Day,
+                    Ano = diaAtual.Year.ToString(),
+                    Numeromes =diaAtual.Month.ToString(),
                     NomeMes= diaAtual.ToString("MMMM", new CultureInfo("pt-BR")),
                     WidthRequest = larguraPorDia
                 });
@@ -88,6 +92,17 @@ namespace e
         private void Button_Clicked(object sender, EventArgs e)
         {
             Browser.OpenAsync("https://www.wwf.org.br/nosso_trabalho/pegada_ecologica/", BrowserLaunchMode.SystemPreferred);
+        }
+
+        private void Button_Clicked_1(object sender, EventArgs e)
+        {
+                var diaselecionado = (Dia)DiasCollectionView.SelectedItem;
+                string ndia = diaselecionado.NumeroDiaMes.ToString();
+                var diaselectwed = (Dia)DiasCollectionView.SelectedItem;
+                string nmes = diaselecionado.NomeMes.ToString();
+                var diaselected = (Dia)DiasCollectionView.SelectedItem;
+                string nano = diaselecionado.Ano.ToString();
+                Navigation.PushModalAsync(new Paginaadd(ndia, nmes, nano));
         }
     }
 }

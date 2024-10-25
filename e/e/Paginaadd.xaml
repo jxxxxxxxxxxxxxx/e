@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundColor="#dae3c4"
+             x:Class="e.Paginaadd">
+    <ContentPage.Content>
+        <StackLayout Padding="20" VerticalOptions="Center">
+            <Label Text="𝐍𝐨𝐯𝐚 𝐓𝐚𝐫𝐞𝐟𝐚" HorizontalOptions="Center" TextColor="#95af54"/>
+            <Entry Placeholder="Nome da Tarefa" HorizontalOptions="Center" WidthRequest="200" x:Name="nometarefa"/>
+            <StackLayout Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="Center">
+                <Button Text="Criar Tarefa" Clicked="Button_Clicked" BackgroundColor="#95af54"/>
+                <Button Text="Cancelar" Clicked="Button_Clicked_1" BackgroundColor="#95af54"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              x:Class="e.Metas"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
              Title="Metas"
              BackgroundImageSource="fundo22ca.png">
     <ContentPage.Resources>
@@ -57,10 +58,11 @@
                 </ScrollView>
             </StackLayout>
             <Button Text="+"
-                BackgroundColor="Accent"
+                BackgroundColor="#a3bc3a"
                 TextColor="White"
                 CornerRadius="30"
                 WidthRequest="60"
+                Clicked="Button_Clicked_1"
                 HeightRequest="60"
                 AbsoluteLayout.LayoutBounds="1, 1, AutoSize, AutoSize"
                 AbsoluteLayout.LayoutFlags="PositionProportional"

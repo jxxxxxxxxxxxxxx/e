@@ -2,14 +2,15 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="e.Locais.Municipios"
-             Title="Municípios ONGs">
+             BackgroundColor="#deecaa"
+             Title="𝐌𝐮𝐧𝐢𝐜𝐢́𝐩𝐢𝐨𝐬">
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout BackgroundColor="Bisque">
+            <StackLayout BackgroundColor="#698a40">
                 <Label Text="" HorizontalOptions="Center" FontSize="Medium" x:Name="lblestado"/>
                 <Entry Placeholder="Pesquisar" x:Name="TxtMunicipio"
                 TextChanged="BuscaRapida"
-                FontSize="Medium" TextColor="Red" />
+                FontSize="Medium" TextColor="#c8cf5c" />
             </StackLayout>
             <ScrollView Orientation="Vertical">
                     <Grid>
@@ -20,8 +21,8 @@
                             </CollectionView.ItemsLayout>
                             <CollectionView.ItemTemplate>
                                 <DataTemplate>
-                                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center" Padding="20" Spacing="5" BackgroundColor="White">
-                                        <Label Text="{Binding nome}" FontSize="Medium" HorizontalOptions="Center" TextColor="#98b12e" BackgroundColor="#a3bc3a"/>
+                                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center" Padding="20" Spacing="5" BackgroundColor="#d8ee9c">
+                                    <Label Text="{Binding nome}" FontSize="Medium" HorizontalOptions="Center" TextColor="#7a973b" BackgroundColor="#d8ee9c"/>
                                     </StackLayout>
                                 </DataTemplate>
                             </CollectionView.ItemTemplate>

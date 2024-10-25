@@ -4,6 +4,7 @@
        xmlns:pages="clr-namespace:e"
        xmlns:locais="clr-namespace:e.Locais"
        Title="e"
+       FlyoutBackgroundColor="White"
              x:Class="e.Barra_Lateral">
     <Shell.Resources>
         <Style x:Key="style2" TargetType="Element">
@@ -30,15 +31,15 @@
         <ShellContent ContentTemplate="{DataTemplate pages:Metas}"/>
     </FlyoutItem>
 
-    <FlyoutItem Title="Busca" Icon="procurar.png">
+    <FlyoutItem Title="Busca" Icon="procurar.png" Style="{StaticResource style2}">
         <ShellContent ContentTemplate="{DataTemplate pages:Busca}"/>
     </FlyoutItem>
 
-    <FlyoutItem Title="Configurações" Icon="definicoes.png">
+    <FlyoutItem Title="Configurações" Icon="definicoes.png" Style="{StaticResource style2}">
         <ShellContent ContentTemplate="{DataTemplate pages:Configs}"/>
     </FlyoutItem>
 
-    <FlyoutItem Title="Sobre" Icon="sobr.png">
+    <FlyoutItem Title="Sobre" Icon="sobr.png" Style="{StaticResource style2}">
         <ShellContent ContentTemplate="{DataTemplate pages:Sobre}"/>
     </FlyoutItem>
 </Shell>
