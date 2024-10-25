@@ -97,12 +97,19 @@ namespace e
         private void Button_Clicked_1(object sender, EventArgs e)
         {
                 var diaselecionado = (Dia)DiasCollectionView.SelectedItem;
+            var diaselectwed = (Dia)DiasCollectionView.SelectedItem;
+            var diaselected = (Dia)DiasCollectionView.SelectedItem;
+            if (diaselecionado != null && diaselectwed != null && diaselected != null)
+            {
                 string ndia = diaselecionado.NumeroDiaMes.ToString();
-                var diaselectwed = (Dia)DiasCollectionView.SelectedItem;
                 string nmes = diaselecionado.NomeMes.ToString();
-                var diaselected = (Dia)DiasCollectionView.SelectedItem;
                 string nano = diaselecionado.Ano.ToString();
                 Navigation.PushModalAsync(new Paginaadd(ndia, nmes, nano));
+            }
+            else
+            {
+                DisplayAlert("Alerta","Nenhuma data foi selecionada para adicionar uma tarefa","Ok");
+            }
         }
     }
 }

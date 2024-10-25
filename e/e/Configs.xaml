@@ -5,7 +5,7 @@
              BackgroundColor="White"
              Title="Configurações">
     <ContentPage.Content>
-        <StackLayout Padding="30">
+        <StackLayout Padding="30" VerticalOptions="Center">
             <Label Text="Selecione uma forma de Menu"
                 VerticalOptions="Center" 
                 HorizontalOptions="Center" />
