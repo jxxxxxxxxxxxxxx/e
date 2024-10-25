@@ -8,7 +8,7 @@
     <Shell.Resources>
         <Style x:Key="style2" TargetType="Element">
             <Setter Property="Shell.BackgroundColor" Value="White" />
-            <Setter Property="Shell.ForegroundColor" Value="LawnGreen" />
+            <Setter Property="Shell.ForegroundColor" Value="#98b12e" />
             <Setter Property="Shell.TitleColor" Value="#98bd3c" />
             <Setter Property="Shell.DisabledColor" Value="white" />
             <Setter Property="Shell.UnselectedColor" Value="Aqua" />
@@ -17,25 +17,24 @@
     </Shell.Resources>
     <Shell.ItemTemplate>
         <DataTemplate>
-            <Grid Padding="10" BackgroundColor="Green">
-                <Label Text="{Binding Title}" TextColor="Black"/>
+            <Grid Padding="12" BackgroundColor="#98bd3c">
+                <Label Text="{Binding Title}"  FontSize="Medium" HorizontalOptions="Center" TextColor="#686c5e"/>
             </Grid>
         </DataTemplate>
     </Shell.ItemTemplate>
-
     <Shell.FlyoutHeader>
         <pages:HeaderView/>
     </Shell.FlyoutHeader>
 
-    <FlyoutItem Title="Metas" Icon="sobr.png" Style="{StaticResource style2}">
+    <FlyoutItem Title="Metas" Icon="estrela.png" Style="{StaticResource style2}">
         <ShellContent ContentTemplate="{DataTemplate pages:Metas}"/>
     </FlyoutItem>
 
-    <FlyoutItem Title="Busca" Icon="sobr.png">
+    <FlyoutItem Title="Busca" Icon="procurar.png">
         <ShellContent ContentTemplate="{DataTemplate pages:Busca}"/>
     </FlyoutItem>
 
-    <FlyoutItem Title="Configurações" Icon="sobr.png">
+    <FlyoutItem Title="Configurações" Icon="definicoes.png">
         <ShellContent ContentTemplate="{DataTemplate pages:Configs}"/>
     </FlyoutItem>
 

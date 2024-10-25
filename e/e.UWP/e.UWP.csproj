@@ -105,9 +105,13 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="ico.png" />
+    <Content Include="definicoes.png" />
+    <Content Include="estrela.png" />
     <Content Include="fundo2.png" />
+    <Content Include="fundo22ca.png" />
     <Content Include="fundo3.png" />
     <Content Include="healer.png" />
+    <Content Include="procurar.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />

@@ -12,9 +12,9 @@ namespace e
 	[XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Barra_Lateral : Xamarin.Forms.Shell
     {
-		public Barra_Lateral ()
+		public Barra_Lateral()
 		{
-			InitializeComponent ();
+			InitializeComponent();
 		}
-	}
+    }
 }

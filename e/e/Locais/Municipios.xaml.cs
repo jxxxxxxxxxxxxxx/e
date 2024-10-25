@@ -21,7 +21,7 @@ namespace e.Locais
         public Municipios(Estado estado)
         {
             InitializeComponent();
-            lblestado.Text=estado.nome.ToString();
+            lblestado.Text = estado.nome.ToString();
             ListaInternaMunicipio = Servico.Servico.GetMunicipio(estado.id);
             ListaMunicipios.ItemsSource = ListaInternaMunicipio;
         }
@@ -31,10 +31,10 @@ namespace e.Locais
                 (a => a.nome.Contains(args.NewTextValue)).ToList();
             ListaMunicipios.ItemsSource = ListaFiltradaMunicipio;
         }
-        private void SelecaoMunicipio(object sender, SelectedItemChangedEventArgs args)
+        private void Listamunicipio_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Municipio municipio = (Municipio)args.SelectedItem;
-            Browser.OpenAsync("https://www.google.com/maps/search/ONGs com foco em biodiversidade em "+municipio.nome,BrowserLaunchMode.SystemPreferred);
+            Municipio municipio = ListaMunicipios.SelectedItem as Municipio;
+            Browser.OpenAsync("https://www.google.com/maps/search/ONGs com foco em biodiversidade em " + municipio.nome, BrowserLaunchMode.SystemPreferred);
         }
     }
 }

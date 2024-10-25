@@ -11,18 +11,19 @@ using Xamarin.Forms.Xaml;
 namespace e.Ecopontos
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Estados : ContentPage
+	public partial class Estadoss : ContentPage
 	{
-		public Estados ()
-		{
-			InitializeComponent ();
+		public Estadoss ()
+        {
+            InitializeComponent();
             ListaEstados.ItemsSource =
                 Servico.Servico.GetEstados();
         }
-        private void SelecaoEstadoAction(object sender, SelectedItemChangedEventArgs args)
+
+        private void ListaEstados_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Estado estado = (Estado)args.SelectedItem;
-            Navigation.PushAsync(new Municipios(estado));
+            Estado estados = ListaEstados.SelectedItem as Estado;
+            Navigation.PushAsync(new Municipioss(estados));
         }
     }
 }

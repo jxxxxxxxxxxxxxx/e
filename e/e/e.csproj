@@ -25,10 +25,10 @@
     <EmbeddedResource Update="Configs.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Ecopontos\Estados.xaml">
+    <EmbeddedResource Update="Ecopontos\Estadoss.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Ecopontos\Municipios.xaml">
+    <EmbeddedResource Update="Ecopontos\Municipioss.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="HeaderView.xaml">

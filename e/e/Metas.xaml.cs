@@ -25,6 +25,7 @@ namespace e
             public double WidthRequest { get; set; }
             public string Textocor { get; set; }
             public string TextoCor { get; internal set; }
+            public string CorFundo { get; internal set; }
             public bool IsSelecionado { get; set; }
         }
 
@@ -69,12 +70,14 @@ namespace e
             {
                 dia.IsSelecionado = false;
                 dia.TextoCor = "White";
+                dia.CorFundo = "transparent";
             }
             var diaSelecionado = (Dia)e.CurrentSelection[0];
             if (e.CurrentSelection.Count > 0)
             {
                 diaSelecionado.IsSelecionado = true;
                 diaSelecionado.TextoCor = "#acbd24";
+                diaSelecionado.CorFundo = "#d8ee9c";
             }
             DiasCollectionView.ItemsSource = null;
             DiasCollectionView.ItemsSource = Dias;

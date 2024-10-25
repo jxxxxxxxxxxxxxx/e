@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              x:Class="e.Metas"
              Title="Metas"
-             BackgroundImageSource="fundo3.png">
+             BackgroundImageSource="fundo22ca.png">
     <ContentPage.Resources>
     <Style TargetType="Grid">
         <Setter Property="VisualStateManager.VisualStateGroups">
@@ -22,37 +22,50 @@
         </Style>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <ScrollView Orientation="Both">
-            <Grid RowDefinitions="Auto, *" Padding="20, 0, 20, 0">
-                <CollectionView x:Name="DiasCollectionView" SelectionMode="Single"
+        <AbsoluteLayout>
+            <StackLayout AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+                <ScrollView Orientation="Vertical">
+                <Grid RowDefinitions="Auto, *" Padding="20, 0, 20, 0">
+                    <CollectionView x:Name="DiasCollectionView" SelectionMode="Single"
                         SelectionChanged="DiasCollectionView_SelectionChanged"
                         Grid.Row="0" HeightRequest="100">
-                    <CollectionView.ItemsLayout>
-                        <LinearItemsLayout Orientation="Horizontal" />
-                    </CollectionView.ItemsLayout>
-
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <StackLayout HorizontalOptions="FillAndExpand" WidthRequest="{Binding WidthRequest}" VerticalOptions="Center" Padding="0" Spacing="5">
-                                <Label Text="{Binding NomeDia}" FontSize="Medium" HorizontalOptions="Center" TextColor="{Binding TextoCor}"/>
-                                <Label Text="{Binding NumeroDiaMes}" FontSize="Large" HorizontalOptions="Center" TextColor="{Binding TextoCor}"/>
-                            </StackLayout>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-                <ScrollView Grid.Row="1">
-                    <StackLayout>
-                        <Label x:Name="DiaSelecionadoLabel" Text="Selecione um dia"
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout Orientation="Horizontal" />
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout HorizontalOptions="FillAndExpand" WidthRequest="{Binding WidthRequest}" VerticalOptions="Center" Padding="0" Spacing="5" BackgroundColor="{Binding CorFundo}">
+                                    <Label Text="{Binding NomeDia}" FontSize="Medium" HorizontalOptions="Center" TextColor="{Binding TextoCor}" BackgroundColor="{Binding CorFundo}"/>
+                                    <Label Text="{Binding NumeroDiaMes}" FontSize="Large" HorizontalOptions="Center" TextColor="{Binding TextoCor}" BackgroundColor="{Binding CorFundo}"/>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                    <ScrollView Grid.Row="1">
+                        <StackLayout>
+                            <Label x:Name="DiaSelecionadoLabel" Text="Selecione um dia"
                        HorizontalOptions="Center" VerticalOptions="Start"
                        FontSize="Large" Padding="10"/>
-                        <StackLayout Orientation="Horizontal" Padding="40">
-                        <CheckBox IsChecked="False"/>
-                            <Label Text="aaaaaaaaaa"/>
+                            <StackLayout Orientation="Horizontal" Padding="40">
+                                <CheckBox IsChecked="False" Color="#98b12e"/>
+                                <Label Text="aaaaaaaaaa"/>
+                            </StackLayout>
+                            <Button Text="Pegada Ecológica" Clicked="Button_Clicked" BackgroundColor="#a3bc3a"/>
                         </StackLayout>
-                        <Button Text="Pegada Ecológica" VerticalOptions="End" Clicked="Button_Clicked" BackgroundColor="#a3bc3a"/>
-                    </StackLayout>
+                    </ScrollView>
+                </Grid>
                 </ScrollView>
-            </Grid>
-        </ScrollView>
+            </StackLayout>
+            <Button Text="+"
+                BackgroundColor="Accent"
+                TextColor="White"
+                CornerRadius="30"
+                WidthRequest="60"
+                HeightRequest="60"
+                AbsoluteLayout.LayoutBounds="1, 1, AutoSize, AutoSize"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                VerticalOptions="End"
+                HorizontalOptions="End"/>
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

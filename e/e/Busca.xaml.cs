@@ -21,7 +21,7 @@ namespace e
 
         private void Ecopontos(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new e.Ecopontos.Estados());
+            Navigation.PushAsync(new e.Ecopontos.Estadoss());
         }
         private void ONGs(object sender, EventArgs e)
         {

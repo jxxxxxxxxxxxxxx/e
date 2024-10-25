@@ -19,10 +19,11 @@ namespace e.Locais
             ListaEstados.ItemsSource =
                 Servico.Servico.GetEstados();
         }
-        private void SelecaoEstadoAction(object sender, SelectedItemChangedEventArgs args)
+
+        private void ListaEstados_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Estado estado = (Estado)args.SelectedItem;
-            Navigation.PushAsync(new Municipios(estado));
+            Estado estados= ListaEstados.SelectedItem as Estado;
+            Navigation.PushAsync(new Municipios(estados));
         }
     }
 }

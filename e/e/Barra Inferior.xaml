@@ -21,9 +21,9 @@
         </Style>
     </Shell.Resources>
     <TabBar Style="{StaticResource Style1}">
-        <ShellContent Title="𝐌𝐞𝐭𝐚𝐬" Icon="ico.png" ContentTemplate="{DataTemplate pages:Metas}"/>
-        <ShellContent Title="𝐁𝐮𝐬𝐜𝐚" Icon="" ContentTemplate="{DataTemplate pages:Busca}"/>
-        <ShellContent Title="Configurações" Icon="" ContentTemplate="{DataTemplate pages:Configs}"/>
+        <ShellContent Title="𝐌𝐞𝐭𝐚𝐬" Icon="estrela.png" ContentTemplate="{DataTemplate pages:Metas}"/>
+        <ShellContent Title="𝐁𝐮𝐬𝐜𝐚" Icon="procurar.png" ContentTemplate="{DataTemplate pages:Busca}"/>
+        <ShellContent Title="𝐂𝐨𝐧𝐟𝐢𝐠𝐮𝐫𝐚𝐜̧𝐨̃𝐞𝐬" Icon="definicoes.png" ContentTemplate="{DataTemplate pages:Configs}"/>
         <ShellContent Title="𝐒𝐨𝐛𝐫𝐞"  Icon="sobr.png" ContentTemplate="{DataTemplate pages:Sobre}"/>
     </TabBar>
 </Shell>
