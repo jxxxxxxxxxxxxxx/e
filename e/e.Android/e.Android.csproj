@@ -54,10 +54,15 @@
     <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
     <BundleAssemblies>false</BundleAssemblies>
     <AndroidLinkTool>r8</AndroidLinkTool>
-    <AndroidKeyStore>false</AndroidKeyStore>
+    <AndroidKeyStore>true</AndroidKeyStore>
     <AndroidCreatePackagePerAbi>false</AndroidCreatePackagePerAbi>
     <AndroidLinkMode>Full</AndroidLinkMode>
     <MandroidI18n />
+    <AndroidSupportedAbis>armeabi-v7a;x86;x86_64;arm64-v8a</AndroidSupportedAbis>
+    <AndroidSigningKeyStore>D:\EcoPlanEcology.keystore</AndroidSigningKeyStore>
+    <AndroidSigningStorePass>gj260124</AndroidSigningStorePass>
+    <AndroidSigningKeyPass>gj260124</AndroidSigningKeyPass>
+    <AndroidSigningKeyAlias>EcoPlan</AndroidSigningKeyAlias>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
@@ -142,6 +147,9 @@
     <AndroidResource Include="Resources\drawable\estrela.png" />
     <AndroidResource Include="Resources\drawable\fundo22ca.png" />
     <AndroidResource Include="Resources\drawable\procurar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\sobre.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

@@ -10,6 +10,7 @@ using System.Collections.ObjectModel;
 using e.Modelo;
 using Xamarin.Essentials;
 using static e.Metas;
+using e.banco;
 
 namespace e
 {
@@ -30,16 +31,14 @@ namespace e
             public string CorFundo { get; internal set; }
             public bool IsSelecionado { get; set; }
         }
-
         public ObservableCollection<Dia> Dias { get; set; }
-
         public Metas()
         {
             InitializeComponent();
             Dias = new ObservableCollection<Dia>();
             PreencherDiasDaSemana();
             DiasCollectionView.ItemsSource = Dias;
-            
+
         }
         private void PreencherDiasDaSemana()
         {
@@ -85,8 +84,9 @@ namespace e
             }
             DiasCollectionView.ItemsSource = null;
             DiasCollectionView.ItemsSource = Dias;
-            DiaSelecionadoLabel.Text = $"Você selecionou {diaSelecionado.NomeDiaex}, dia {diaSelecionado.NumeroDiaMes} de {diaSelecionado.NomeMes}";
+            DiaSelecionadoLabel.Text = $"{diaSelecionado.NomeDiaex}, dia {diaSelecionado.NumeroDiaMes} de {diaSelecionado.NomeMes}";
             DiaSelecionadoLabel.FontFamily = "sans-serif-thin";
+            listar();
         }
 
         private void Button_Clicked(object sender, EventArgs e)
@@ -97,6 +97,24 @@ namespace e
         private void Button_Clicked_1(object sender, EventArgs e)
         {
                 var diaselecionado = (Dia)DiasCollectionView.SelectedItem;
+                var diaselectwed = (Dia)DiasCollectionView.SelectedItem;
+                var diaselected = (Dia)DiasCollectionView.SelectedItem;
+                if (diaselecionado != null && diaselectwed != null && diaselected != null)
+                {
+                    string ndia = diaselecionado.NumeroDiaMes.ToString();
+                    string nmes = diaselecionado.NomeMes.ToString();
+                    string nano = diaselecionado.Ano.ToString();
+                    Navigation.PushModalAsync(new Paginaadd(ndia, nmes, nano));
+                }
+                else
+                {
+                    DisplayAlert("Alerta", "Nenhuma data foi selecionada para adicionar uma meta", "Ok");
+                }
+
+        }
+        public void listar()
+        {
+            var diaselecionado = (Dia)DiasCollectionView.SelectedItem;
             var diaselectwed = (Dia)DiasCollectionView.SelectedItem;
             var diaselected = (Dia)DiasCollectionView.SelectedItem;
             if (diaselecionado != null && diaselectwed != null && diaselected != null)
@@ -104,12 +122,83 @@ namespace e
                 string ndia = diaselecionado.NumeroDiaMes.ToString();
                 string nmes = diaselecionado.NomeMes.ToString();
                 string nano = diaselecionado.Ano.ToString();
-                Navigation.PushModalAsync(new Paginaadd(ndia, nmes, nano));
+                Banco_funcoes dbf = new Banco_funcoes();
+                dbf.CriarBancoDeDados();
+                List<Expo> listatarefas = new List<Expo>();
+                listatarefas = dbf.GetTarefas(ndia, nmes, nano);
+                var array = listatarefas.ToArray();
+                List<Expo> lista = new List<Expo>();
+                for (int c = 0; c < array.Length; c++)
+                {
+                    lista.Add(new Expo
+                    {
+                        Tarefa = array[c].Tarefa,
+                        Dia = array[c].Dia,
+                        Mes = array[c].Mes,
+                        Ano = array[c].Ano,
+                        Concluida = array[c].Concluida,
+                    });
+                }
+                ls_tarefas.ItemsSource = lista;
             }
             else
             {
-                DisplayAlert("Alerta","Nenhuma data foi selecionada para adicionar uma tarefa","Ok");
+                DisplayAlert("Alerta", "Nenhuma data foi selecionada para listar as metas", "Ok");
             }
         }
+
+        private void Button_Clicked_2(object sender, EventArgs e)
+        {
+            listar();
+        }
+
+        private void Button_Clicked_3(object sender, EventArgs e)
+        {
+            var tarefaselecionada = (Expo)ls_tarefas.SelectedItem;
+            string nometarefa = tarefaselecionada.Tarefa.ToString();
+            Navigation.PushModalAsync(new Paginaalt(nometarefa));
+        }
+
+        private void Button_Clicked_4(object sender, EventArgs e)
+        {
+            var diaselecionado = (Dia)DiasCollectionView.SelectedItem;
+            var diaselectwed = (Dia)DiasCollectionView.SelectedItem;
+            var diaselected = (Dia)DiasCollectionView.SelectedItem;
+            var tarefaselecionada = (Expo)ls_tarefas.SelectedItem;
+            string ndia = diaselecionado.NumeroDiaMes.ToString();
+            string nmes = diaselecionado.NomeMes.ToString();
+            string nano = diaselecionado.Ano.ToString();
+            string nometarefa = tarefaselecionada.Tarefa.ToString();
+            Banco_funcoes dbf = new Banco_funcoes();
+            dbf.CriarBancoDeDados();
+            dbf.Excluirtarefa(nometarefa, ndia, nmes, nano);
+            DisplayAlert("Mensagem", "Meta: "+nometarefa+" excluída com Sucesso!", "OK");
+            listar();
+            alt.IsVisible = false;
+            del.IsVisible = false;
+        }
+
+        private void CheckBox_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            if (e.Value == true)
+            {
+                DisplayAlert("Parabéns", "Meta Concluída!!!", "Eba!");
+            }
+        }
+
+        private void ls_tarefas_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (ls_tarefas.SelectedItem == null)
+            {
+                alt.IsVisible = false;
+                del.IsVisible = false;
+            }
+            else
+            {
+                alt.IsVisible = true;
+                del.IsVisible = true;
+            }
+        }
+
     }
 }

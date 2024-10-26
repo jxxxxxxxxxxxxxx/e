@@ -2,13 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              BackgroundColor="#dae3c4"
-             x:Class="e.Paginaadd">
+             x:Class="e.Paginaalt">
     <ContentPage.Content>
         <StackLayout Padding="20" VerticalOptions="Center">
-            <Label Text="𝐍𝐨𝐯𝐚 𝐌𝐞𝐭𝐚" HorizontalOptions="Center" TextColor="#95af54"/>
-            <Entry Placeholder="Nome da Meta" HorizontalOptions="Center" WidthRequest="200" x:Name="nometarefa"/>
+            <Label Text="𝐀𝐥𝐭𝐞𝐫𝐚𝐫 𝐌𝐞𝐭𝐚" HorizontalOptions="Center" TextColor="#95af54"/>
+            <Entry Placeholder="Novo nome da Meta" HorizontalOptions="Center" WidthRequest="200" x:Name="nometarefa" Text=""/>
             <StackLayout Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="Center">
-                <Button Text="Criar Meta" Clicked="Button_Clicked" BackgroundColor="#95af54"/>
+                <Button Text="Editar Meta" Clicked="Button_Clicked" BackgroundColor="#95af54"/>
                 <Button Text="Cancelar" Clicked="Button_Clicked_1" BackgroundColor="#95af54"/>
             </StackLayout>
         </StackLayout>

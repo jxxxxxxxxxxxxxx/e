@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using e.banco;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -17,18 +17,18 @@ namespace e
         private void Button_Clicked(object sender, EventArgs e)
         {
             string ntarefa=nometarefa.Text;
-            if (ntarefa=="")
+            if (ntarefa== "" || ntarefa=="Nome da Meta" )
             {
-                DisplayAlert("Mensagem", "Campo 'Nome da Tarefa' Vazio", "OK");
+                DisplayAlert("Mensagem", "Defina um nome para sua nova Meta", "OK");
             }
             else
             {
-                //Banco_funcoes dbf = new Banco_funcoes();
-                //dbf.CriarBancoDeDados();
-                //dbf.InserirCliente(ntarefa, diaselecionado, messelecionado, anoselecionado);
-                DisplayAlert("Mensagem", "Tarefa: "+ntarefa+" adicionada com Sucesso!", "OK");
+                Banco_funcoes dbf = new Banco_funcoes();
+                dbf.CriarBancoDeDados();
+                dbf.AddTarefas(ntarefa, diaselecionado, messelecionado, anoselecionado);
+                DisplayAlert("Mensagem", "A Meta: "+ntarefa+" adicionada com Sucesso!", "OK");
+                Navigation.PopModalAsync();
             }
-            Navigation.PopModalAsync();
         }
 
         private void Button_Clicked_1(object sender, EventArgs e)
