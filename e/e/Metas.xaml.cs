@@ -176,6 +176,8 @@ namespace e
             listar();
             alt.IsVisible = false;
             del.IsVisible = false;
+            alt.IsEnabled = false;
+            del.IsEnabled = false;
         }
 
         private void CheckBox_CheckedChanged(object sender, CheckedChangedEventArgs e)
@@ -192,11 +194,15 @@ namespace e
             {
                 alt.IsVisible = false;
                 del.IsVisible = false;
+                alt.IsEnabled = false;
+                del.IsEnabled = false;
             }
             else
             {
                 alt.IsVisible = true;
                 del.IsVisible = true;
+                alt.IsEnabled = true;
+                del.IsEnabled = true;
             }
         }
 
