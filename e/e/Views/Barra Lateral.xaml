@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:pages="clr-namespace:e.Views"
+       Title="e"
+       FlyoutBackgroundColor="White"
+             x:Class="e.Barra_Lateral">
+    <Shell.Resources>
+        <Style x:Key="style2" TargetType="Element">
+            <Setter Property="Shell.BackgroundColor" Value="White" />
+            <Setter Property="Shell.ForegroundColor" Value="#98b12e" />
+            <Setter Property="Shell.TitleColor" Value="#98bd3c" />
+            <Setter Property="Shell.DisabledColor" Value="white" />
+            <Setter Property="Shell.UnselectedColor" Value="Aqua" />
+            <Setter Property="Shell.FlyoutBackgroundColor" Value="Green" />
+        </Style>
+    </Shell.Resources>
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid Padding="12" BackgroundColor="#98bd3c">
+                <Label Text="{Binding Title}"  FontSize="Medium" HorizontalOptions="Center" TextColor="#686c5e"/>
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+    <Shell.FlyoutHeader>
+        <Grid HeightRequest="200">
+            <Image Source="Logo.png" Aspect="AspectFill"/>
+        </Grid>
+    </Shell.FlyoutHeader>
+
+    <FlyoutItem Title="Adicionar Lote" Icon="estrela.png" Style="{StaticResource style2}">
+        <ShellContent ContentTemplate="{DataTemplate pages:AddLotes}"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Pesquisar Lote" Icon="procurar.png" Style="{StaticResource style2}">
+        <ShellContent ContentTemplate="{DataTemplate pages:PesquisarLote}"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Lista de Lotes" Icon="definicoes.png" Style="{StaticResource style2}">
+        <ShellContent ContentTemplate="{DataTemplate pages:ListarLotes}"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Alterar Lote" Icon="sobr.png" Style="{StaticResource style2}">
+        <ShellContent ContentTemplate="{DataTemplate pages:AlterarLote}"/>
+    </FlyoutItem>
+    <FlyoutItem Title="Excluir Lote" Icon="sobr.png" Style="{StaticResource style2}">
+        <ShellContent ContentTemplate="{DataTemplate pages:ExcluirLote}"/>
+    </FlyoutItem>
+</Shell>

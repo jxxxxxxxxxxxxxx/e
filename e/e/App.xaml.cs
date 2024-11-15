@@ -10,7 +10,7 @@ namespace e
         public App()
         {
             InitializeComponent();
-            MainPage = new Configs();
+            MainPage = new Views.LoginView();
         }
 
         protected override void OnStart()

@@ -1,42 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             x:Class="e.Metas"
-             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
-             Title="Metas"
-             BackgroundImageSource="fundo22ca.png">
-    <ContentPage.Resources>
-    <Style TargetType="Grid">
-        <Setter Property="VisualStateManager.VisualStateGroups">
-            <VisualStateGroupList>
-                <VisualStateGroup x:Name="CommonStates">
-                    <VisualState x:Name="Normal" />
-                    <VisualState x:Name="Selected">
-                        <VisualState.Setters>
-                            <Setter Property="BackgroundColor"
-                                        Value="Green" />
-                        </VisualState.Setters>
-                    </VisualState>
-                </VisualStateGroup>
-            </VisualStateGroupList>
-        </Setter>
-        </Style>
-    </ContentPage.Resources>
-    <ContentPage.Content>        <AbsoluteLayout>            <StackLayout AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">                <ScrollView Orientation="Vertical">                    <Grid RowDefinitions="Auto, *" Padding="20, 0, 20, 0">                        <CollectionView x:Name="DiasCollectionView" SelectionMode="Single"                    SelectionChanged="DiasCollectionView_SelectionChanged"                    Grid.Row="0" HeightRequest="100">                            <CollectionView.ItemsLayout>                                <LinearItemsLayout Orientation="Horizontal" />                            </CollectionView.ItemsLayout>                            <CollectionView.ItemTemplate>                                <DataTemplate>                                    <StackLayout HorizontalOptions="FillAndExpand" WidthRequest="{Binding WidthRequest}" VerticalOptions="Center" Padding="0" Spacing="5" BackgroundColor="{Binding CorFundo}">                                        <Label Text="{Binding NomeDia}" FontSize="Medium" HorizontalOptions="Center" TextColor="{Binding TextoCor}" BackgroundColor="{Binding CorFundo}"/>                                        <Label Text="{Binding NumeroDiaMes}" FontSize="Large" HorizontalOptions="Center" TextColor="{Binding TextoCor}" BackgroundColor="{Binding CorFundo}"/>                                    </StackLayout>                                </DataTemplate>                            </CollectionView.ItemTemplate>                        </CollectionView>                        <ScrollView Grid.Row="1">                            <StackLayout>                                <Label x:Name="DiaSelecionadoLabel" Text="Selecione um dia"                   HorizontalOptions="Center" VerticalOptions="Start"                   FontSize="Large" Padding="10"/>                                <Button Text="Atualizar Metas" BackgroundColor="#a3bc3a" Clicked="Button_Clicked_2"/>                                <ScrollView Orientation="Both">
-                                    <Grid>
-                                        <CollectionView x:Name="ls_tarefas" SelectionMode="Single" SelectionChanged="ls_tarefas_SelectionChanged" WidthRequest="50" HeightRequest="300">
-                                            <CollectionView.ItemsLayout>
-                                                <LinearItemsLayout Orientation="Vertical" />
-                                            </CollectionView.ItemsLayout>
-                                            <CollectionView.ItemTemplate>
-                                                <DataTemplate>
-                                                    <StackLayout HorizontalOptions="Fill" BackgroundColor="#d8ee9c" Spacing="20" Padding="10" Orientation="Horizontal">
-                                                        <CheckBox Color="#a3bc3a" IsChecked="{Binding stscheck}" CheckedChanged="CheckBox_CheckedChanged"/>
-                                                        <Label Text="{Binding Tarefa}" FontSize="Medium" HorizontalOptions="Center" TextColor="#7a973b" BackgroundColor="#d8ee9c"/>
-                                                    </StackLayout>
-                                                </DataTemplate>
-                                            </CollectionView.ItemTemplate>
-                                        </CollectionView>
-                                    </Grid>
-                                </ScrollView>                                <StackLayout Orientation="Horizontal" Padding="10">                                    <Button Text="Alterar Meta" Clicked="Button_Clicked_3" BackgroundColor="#a3bc3a" IsVisible="false" IsEnabled="False" x:Name="alt"/>                                    <Button Text="Deletar Meta" Clicked="Button_Clicked_4" BackgroundColor="#a3bc3a" IsVisible="false" IsEnabled="False" x:Name="del"/>                                </StackLayout>                                <Button Text="Pegada Ecológica" Clicked="Button_Clicked" BackgroundColor="#a3bc3a" x:Name="a"/>                            </StackLayout>                        </ScrollView>                    </Grid>                </ScrollView>            </StackLayout>            <Button Text="+"            BackgroundColor="#a3bc3a"            TextColor="White"            CornerRadius="30"            WidthRequest="60"            Clicked="Button_Clicked_1"            HeightRequest="60"            AbsoluteLayout.LayoutBounds="1, 1, AutoSize, AutoSize"            AbsoluteLayout.LayoutFlags="PositionProportional"            VerticalOptions="End"            HorizontalOptions="End"/>        </AbsoluteLayout>    </ContentPage.Content>
-</ContentPage>

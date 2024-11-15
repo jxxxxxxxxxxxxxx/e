@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="e.Views.HeaderView">
+    <Grid HeightRequest="200">
+        <Label Text="Header" TextColor="LightGreen" HorizontalOptions="Center" VerticalOptions="Center" FontSize="40"/>
+        <Image Source="Logo.png" Aspect="AspectFill"/>
+    </Grid>
+</ContentPage>

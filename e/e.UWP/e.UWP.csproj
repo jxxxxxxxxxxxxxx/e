@@ -104,14 +104,7 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="ico.png" />
-    <Content Include="definicoes.png" />
-    <Content Include="estrela.png" />
-    <Content Include="fundo2.png" />
-    <Content Include="fundo22ca.png" />
-    <Content Include="fundo3.png" />
-    <Content Include="healer.png" />
-    <Content Include="procurar.png" />
+    <Content Include="Logo.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />
@@ -140,11 +133,6 @@
     <Content Include="Assets\Wide310x150Logo.scale-100.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
-    <Content Include="ratao.jpg" />
-    <Content Include="ratatoule.jpg" />
-    <Content Include="rato.jpg" />
-    <Content Include="sobr.png" />
-    <Content Include="stuart.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
