@@ -4,10 +4,53 @@
              x:Class="e.Views.AlterarLote"
              Title="Alterar Lote">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView Orientation="Vertical">
+            <StackLayout BackgroundColor="White" Padding="30">
+                <Label Text="Alteração de Lotes" FontFamily="Times new roman"    
+VerticalOptions="Center"
+HorizontalOptions="CenterAndExpand"
+FontSize="Large"
+TextColor="#f8bdc6"/>
+                <Label Text="Lote: " FontSize="Medium"
+TextColor="#f8bdc6"/>
+                <Entry x:Name="txt_lote"  FontSize="Medium" Keyboard="Numeric"
+TextColor="Black" BackgroundColor="Transparent"/>
+                <Label Text="Sabor: " FontSize="Medium"
+TextColor="#f8bdc6"/>
+                <Entry x:Name="txt_sabor"  FontSize="Medium"
+TextColor="Black" BackgroundColor="Transparent"/>
+                <Label Text="Calda: " FontSize="Medium"
+TextColor="#f8bdc6"/>
+                <Entry x:Name="txt_calda"  FontSize="Medium"
+TextColor="Black" BackgroundColor="Transparent"/>
+                <Label Text="Dosagem: " FontSize="Medium"
+TextColor="#f8bdc6"/>
+                <Entry x:Name="txt_dosagem" FontSize="Medium"
+TextColor="Black" BackgroundColor="Transparent"/>
+                <Label Text="Data de Maceração: " FontSize="Medium"
+TextColor="#f8bdc6"/>
+                <DatePicker Format="dd/MM/yyyy" x:Name="dmaceracao" BackgroundColor="Transparent" TextColor="Black"/>
+                <Label Text="Valor de Venda: " FontSize="Medium"
+TextColor="#f8bdc6"/>
+                <Entry x:Name="txt_valdvenda" FontSize="Medium" Keyboard="Numeric"
+TextColor="Black" BackgroundColor="Transparent"/>
+                <Label Text="Custo: " FontSize="Medium"
+TextColor="#f8bdc6"/>
+                <Entry x:Name="txt_custo" FontSize="Medium" Keyboard="Numeric"
+TextColor="Black" BackgroundColor="Transparent"/>
+                <Label Text="Quantidade: " FontSize="Medium"
+TextColor="#f8bdc6"/>
+                <Entry x:Name="txt_qtd" FontSize="Medium" Keyboard="Numeric"
+TextColor="Black" BackgroundColor="Transparent"/>
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="Alterar" Clicked="Button_Clicked" FontSize="Medium"
+TextColor="#f8bdc6" VerticalOptions="CenterAndExpand"
+HorizontalOptions="CenterAndExpand" CornerRadius="20" BackgroundColor="Transparent"/>
+                    <Button Text="Obter dados a partir do lote" Clicked="Button_Clicked_1" FontSize="Medium"
+TextColor="#f8bdc6" VerticalOptions="CenterAndExpand"
+HorizontalOptions="CenterAndExpand" CornerRadius="20" BackgroundColor="Transparent"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

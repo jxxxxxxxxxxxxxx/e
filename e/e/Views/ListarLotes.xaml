@@ -2,12 +2,60 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="e.Views.ListarLotes"
-             Title="Listar Lote">
+             Title="Listar Lote" BackgroundColor="White">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView Orientation="Vertical">
+            <StackLayout Padding="30">
+                <Label Text="Listagem dos Lotes" FontFamily="Times new roman"    
+        VerticalOptions="Center"
+        HorizontalOptions="CenterAndExpand"
+        FontSize="Large"
+        TextColor="#f8bdc6"/>
+                <Button Text="Recarregar lotes em produção" Clicked="Button_Clicked" BackgroundColor="Transparent"
+            FontSize="Large" TextColor="#f8bdc6" CornerRadius="20"/>
+                <Button Text="Recarregar lotes em estoque" Clicked="Button_Clicked1" BackgroundColor="Transparent"
+            FontSize="Large" TextColor="#f8bdc6" CornerRadius="20"/>
+                <Label Text="Produtos" FontSize="Medium" HorizontalOptions="Center" TextColor="#f8bdc6"/>
+                <Label Text="Ordem das Informações" HorizontalOptions="Center" FontSize="Medium"  TextColor="#f8bdc6"/>
+                <ListView x:Name="ls_produtos">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ScrollView Orientation="Both">
+                                    <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                                        <Label Text="Lote: " FontSize="Medium" TextColor="Black"/>
+                                        <Label Text="{Binding Lote}" FontSize="Medium" TextColor="Black" x:Name="lbl_lote"/>
+                                        <Label Text="-" FontSize="Medium" TextColor="Black"/>
+                                        <Label Text="Sabor: " FontSize="Medium" TextColor="Black"/>
+                                        <Label Text="{Binding Sabor}" FontSize="Medium" TextColor="Black" x:Name="lbl_sabor"/>
+                                        <Label Text="-" FontSize="Medium" TextColor="Black"/>
+                                        <Label Text="Dosagem: " FontSize="Medium" TextColor="Black"/>
+                                        <Label Text="{Binding Dosagem}" FontSize="Medium" TextColor="Black" x:Name="lbl_dosagem"/>
+                                        <Label Text="-" FontSize="Medium" TextColor="Black"/>
+                                        <Label Text="Calda: " FontSize="Medium" TextColor="Black"/>
+                                        <Label Text="{Binding Calda}" FontSize="Medium" TextColor="Black" x:Name="lbl_calda"/>
+                                        <Label Text="-" FontSize="Medium" TextColor="Black"/>
+                                        <Label Text="Data de Maceração: " FontSize="Medium" TextColor="Black"/>
+                                        <Label Text="{Binding DMaceracao}" FontSize="Medium" TextColor="Black" x:Name="lbl_dmace"/>
+                                        <Label Text="-" FontSize="Medium" TextColor="Black"/>
+                                        <Label Text="Valor de Venda: " FontSize="Medium" TextColor="Black"/>
+                                        <Label Text="{Binding ValdVenda}" FontSize="Medium" TextColor="Black" x:Name="lbl_valdvenda"/>
+                                        <Label Text="-" FontSize="Medium" TextColor="Black"/>
+                                        <Label Text="Custo: " FontSize="Medium" TextColor="Black"/>
+                                        <Label Text="{Binding Custo}" FontSize="Medium" TextColor="Black" x:Name="lbl_custo"/>
+                                        <Label Text="-" FontSize="Medium" TextColor="Black"/>
+                                        <Label Text="Quantidade: " FontSize="Medium" TextColor="Black"/>
+                                        <Label Text="{Binding Quantidade}" FontSize="Medium" TextColor="Black" x:Name="lbl_qtd"/>
+                                        <Label Text="-" FontSize="Medium" TextColor="Black"/>
+                                        <Label Text="Lucro: " FontSize="Medium" TextColor="Black"/>
+                                        <Label Text="{Binding Lucro}" FontSize="Medium" TextColor="Black" x:Name="lbl_lucro"/>
+                                    </StackLayout>
+                                </ScrollView>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

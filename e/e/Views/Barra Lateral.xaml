@@ -8,17 +8,17 @@
     <Shell.Resources>
         <Style x:Key="style2" TargetType="Element">
             <Setter Property="Shell.BackgroundColor" Value="White" />
-            <Setter Property="Shell.ForegroundColor" Value="#98b12e" />
-            <Setter Property="Shell.TitleColor" Value="#98bd3c" />
-            <Setter Property="Shell.DisabledColor" Value="white" />
+            <Setter Property="Shell.ForegroundColor" Value="#BB6E6A" />
+            <Setter Property="Shell.TitleColor" Value="#DB9499" />
+            <Setter Property="Shell.DisabledColor" Value="Black" />
             <Setter Property="Shell.UnselectedColor" Value="Aqua" />
-            <Setter Property="Shell.FlyoutBackgroundColor" Value="Green" />
+            <Setter Property="Shell.FlyoutBackgroundColor" Value="Black" />
         </Style>
     </Shell.Resources>
     <Shell.ItemTemplate>
         <DataTemplate>
-            <Grid Padding="12" BackgroundColor="#98bd3c">
-                <Label Text="{Binding Title}"  FontSize="Medium" HorizontalOptions="Center" TextColor="#686c5e"/>
+            <Grid Padding="12" BackgroundColor="White">
+                <Label Text="{Binding Title}"  FontSize="Medium" HorizontalOptions="Center" TextColor="Black"/>
             </Grid>
         </DataTemplate>
     </Shell.ItemTemplate>
