@@ -11,6 +11,7 @@ namespace e.Models
         public string Calda { get; set; }
         public string Dosagem { get; set; }
         public string DMaceracao { get; set; }
+        public string DP { get; set; }
         public double ValdVenda { get; set; }
         public double Custo { get; set; }
         public double Quantidade { get; set; }

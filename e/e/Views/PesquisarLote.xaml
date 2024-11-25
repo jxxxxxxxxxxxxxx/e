@@ -14,7 +14,16 @@
                 <Entry Placeholder="Digite o sabor" x:Name="txt_sabor" FontSize="Medium" BackgroundColor="Transparent" TextColor="Black"/>
                 <Button Text="Pesquisar" Clicked="Button_Clicked" BackgroundColor="Transparent"
             FontSize="Large" TextColor="#f8bdc6" CornerRadius="20"/>
-                <Entry Placeholder="Digite a dosagem" x:Name="txt_dosagem" FontSize="Medium" BackgroundColor="Transparent" TextColor="Black"/>
+                <Picker x:Name="PickerD" 
+Title="Selecione uma opção" BackgroundColor="Transparent" TextColor="#f8bdc6">
+                    <Picker.Items>
+                        <x:String></x:String>
+                        <x:String>50ml</x:String>
+                        <x:String>250ml</x:String>
+                        <x:String>500ml</x:String>
+                        <x:String>1L</x:String>
+                    </Picker.Items>
+                </Picker>
                 <Button Text="Pesquisar" Clicked="Button_Clicked_1" BackgroundColor="Transparent"
             FontSize="Large" TextColor="#f8bdc6" CornerRadius="20"/>
                 <Entry Placeholder="Digite a calda" x:Name="txt_calda" FontSize="Medium" BackgroundColor="Transparent" TextColor="Black"/>
@@ -41,6 +50,9 @@
                                         <Label Text="-" FontSize="Medium" TextColor="Black"/>
                                         <Label Text="Data de Maceração: " FontSize="Medium" TextColor="Black"/>
                                         <Label Text="{Binding DMaceracao}" FontSize="Medium" TextColor="Black" x:Name="lbl_dmace"/>
+                                        <Label Text="-" FontSize="Medium" TextColor="Black"/>
+                                        <Label Text="Data Finalização: " FontSize="Medium" TextColor="Black"/>
+                                        <Label Text="{Binding DP}" FontSize="Medium" TextColor="Black" x:Name="lbl_dc"/>
                                         <Label Text="-" FontSize="Medium" TextColor="Black"/>
                                         <Label Text="Valor de Venda: " FontSize="Medium" TextColor="Black"/>
                                         <Label Text="{Binding ValdVenda}" FontSize="Medium" TextColor="Black" x:Name="lbl_valdvenda"/>

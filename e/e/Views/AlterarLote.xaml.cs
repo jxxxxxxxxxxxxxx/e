@@ -23,21 +23,24 @@ namespace e.Views
         {
             try
             {
+                string dosagem=PickerD.SelectedItem.ToString();
                 string datamaceracao = dmaceracao.Date.ToString("dd/MM/yyyy");
+                string dp = dpp.Date.ToString("dd/MM/yyyy");
                 double v, c, q, l;
                 v = Convert.ToDouble(txt_valdvenda.Text);
                 c = Convert.ToDouble(txt_custo.Text);
                 q = Convert.ToDouble(txt_qtd.Text);
                 l = ((v * q) - (c * q));
-                Update.UpdateProdutoP(txt_lote.Text, txt_sabor.Text, txt_calda.Text, txt_dosagem.Text, datamaceracao, v, c, q, l);
+                Update.UpdateProdutoP(txt_lote.Text, txt_sabor.Text, txt_calda.Text, dosagem, datamaceracao, dp,  v, c, q, l);
                 txt_lote.Text = string.Empty;
                 txt_sabor.Text = string.Empty;
                 txt_calda.Text = string.Empty;
-                txt_dosagem.Text = string.Empty;
+                PickerD.SelectedIndex = 0;
                 txt_valdvenda.Text = string.Empty;
                 txt_custo.Text = string.Empty;
                 txt_qtd.Text = string.Empty;
                 dmaceracao.Date = DateTime.Today;
+                dpp.Date = DateTime.Today;
                 DisplayAlert("", "Lote Alterado com Sucesso", "Ok");
             }
             catch (Exception ex)
@@ -51,7 +54,22 @@ namespace e.Views
             var p= await Update.GetProdutooP(txt_lote.Text);
             txt_sabor.Text = p.Sabor;
             txt_calda.Text = p.Calda;
-            txt_dosagem.Text = p.Dosagem;
+            if (p.Dosagem == "50ml")
+            {
+                PickerD.SelectedIndex=1;
+            }
+            else if (p.Dosagem == "250ml")
+            {
+                PickerD.SelectedIndex = 2;
+            }
+            else if (p.Dosagem == "500ml")
+            {
+                PickerD.SelectedIndex = 3;
+            }
+            else if (p.Dosagem == "1L")
+            {
+                PickerD.SelectedIndex = 4;
+            }
             txt_valdvenda.Text = p.ValdVenda.ToString();
             txt_custo.Text = p.Custo.ToString();
             txt_qtd.Text = p.Quantidade.ToString();
@@ -61,6 +79,12 @@ namespace e.Views
             string ano = partes[2];
             string data = mes + "/" + dia + "/" + ano;
             dmaceracao.Date=DateTime.Parse(data);
+            string[] part = p.DP.Split('/');
+            string d = part[0];
+            string m = part[1];
+            string a = part[2];
+            string date = m + "/" + d + "/" + a;
+            dpp.Date = DateTime.Parse(date);
         }
     }
 }

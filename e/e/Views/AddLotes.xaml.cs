@@ -53,25 +53,31 @@ namespace e.Views
         {
             if (Picker.SelectedIndex == 1)
             {
+                dmaceracao.IsVisible = true;
+                dpp.IsVisible = true;
                 try
                 {
+                    string dosagem = PickerD.SelectedItem.ToString();
                     string datamaceracao = dmaceracao.Date.ToString("dd/MM/yyyy");
+                    string dp = dpp.Date.ToString("dd/MM/yyyy");
                     double v, c, q, l;
                     v = Convert.ToDouble(txt_valdvenda.Text);
                     c = Convert.ToDouble(txt_custo.Text);
                     q = Convert.ToDouble(txt_qtd.Text);
                     l = ((v * q) - (c * q));
-                    Result=await create.AddLoteFrutal(txt_lote.Text, txt_sabor.Text, txt_calda.Text, txt_dosagem.Text, datamaceracao, v, c, q, l);
+                    Result=await create.AddLoteFrutal(txt_lote.Text, txt_sabor.Text, txt_calda.Text, dosagem, datamaceracao, dp, v, c, q, l);
                     if (Result)
                     {
                         await Application.Current.MainPage.DisplayAlert("Sucesso", "Lote Registrado!", "ok"); txt_lote.Text = string.Empty;
                         txt_sabor.Text = string.Empty;
                         txt_calda.Text = string.Empty;
-                        txt_dosagem.Text = string.Empty;
+                        Picker.SelectedIndex = 0;
+                        PickerD.SelectedIndex = 0;
                         txt_valdvenda.Text = string.Empty;
                         txt_custo.Text = string.Empty;
                         txt_qtd.Text = string.Empty;
                         dmaceracao.Date = DateTime.Today;
+                        dpp.Date = DateTime.Today;
                     }
                     else
                     {
@@ -84,27 +90,31 @@ namespace e.Views
                     await Application.Current.MainPage.DisplayAlert("Erro", ex.Message, "ok");
                 }
             }
-            if (Picker.SelectedIndex == 0)
+            if (Picker.SelectedIndex == 2)
             {
+                dmaceracao.IsVisible= false;
+                dpp.IsVisible = false;
                 try
                 {
-                    string datamaceracao = dmaceracao.Date.ToString("dd/MM/yyyy");
+                    string dosagem = PickerD.SelectedItem.ToString();
                     double v, c, q, l;
                     v = Convert.ToDouble(txt_valdvenda.Text);
                     c = Convert.ToDouble(txt_custo.Text);
                     q = Convert.ToDouble(txt_qtd.Text);
                     l = ((v * q) - (c * q));
-                    Result = await create.AddLoteCremoso(txt_lote.Text, txt_sabor.Text, txt_calda.Text, txt_dosagem.Text, datamaceracao, v, c, q, l);
+                    Result = await create.AddLoteCremoso(txt_lote.Text, txt_sabor.Text, txt_calda.Text, dosagem, v, c, q, l);
                     if (Result)
                     {
                         await Application.Current.MainPage.DisplayAlert("Sucesso", "Lote Registrado!", "ok"); txt_lote.Text = string.Empty;
                         txt_sabor.Text = string.Empty;
                         txt_calda.Text = string.Empty;
-                        txt_dosagem.Text = string.Empty;
+                        Picker.SelectedIndex = 0;
+                        PickerD.SelectedIndex = 0;
                         txt_valdvenda.Text = string.Empty;
                         txt_custo.Text = string.Empty;
                         txt_qtd.Text = string.Empty;
                         dmaceracao.Date = DateTime.Today;
+                        dpp.Date = DateTime.Today;
                     }
                     else
                     {

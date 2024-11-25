@@ -106,6 +106,7 @@ namespace e.ViewModels
                 {
                     Preferences.Set("Username", Username);
                     App.Current.MainPage = new Barra_Lateral();
+                    await Application.Current.MainPage.DisplayAlert("Login", "Login realizado com sucesso", "ok");
                 }
                 else
                     await Application.Current.MainPage.DisplayAlert("Erro", "Usuario/Senha invalido(a(s))", "ok");

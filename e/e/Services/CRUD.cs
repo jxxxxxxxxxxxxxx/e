@@ -15,23 +15,23 @@ namespace e.Services
     public class CRUD
     {
         FirebaseClient firebase = new FirebaseClient("https://licoratta00-default-rtdb.firebaseio.com/");
-        public async Task<bool> AddLoteFrutal(string lote,string sabor, string calda, string dosagem, string maceradoem, double valdvenda, double custo, double quantidade, double lucro )
+        public async Task<bool> AddLoteFrutal(string lote,string sabor, string calda, string dosagem, string maceradoem, string DP, double valdvenda, double custo, double quantidade, double lucro )
         {
             if (await IsLotePExists(lote) == false && await IsLoteExists(lote, sabor)==false)
             {
-                await firebase.Child("Produção").PostAsync(new Produto() { Lote = lote, Sabor = sabor, Calda = calda, Dosagem = dosagem, DMaceracao = maceradoem, ValdVenda = valdvenda, Custo = custo, Quantidade = quantidade, Lucro = lucro });
-                await firebase.Child(sabor).PostAsync(new Produto() { Lote = lote, Sabor = sabor, Calda = calda, Dosagem = dosagem, DMaceracao = maceradoem, ValdVenda = valdvenda, Custo = custo, Quantidade = quantidade, Lucro = lucro });
+                await firebase.Child("Produção").PostAsync(new Produto() { Lote = lote, Sabor = sabor, Calda = calda, Dosagem = dosagem, DMaceracao = maceradoem, DP=DP, ValdVenda = valdvenda, Custo = custo, Quantidade = quantidade, Lucro = lucro });
+                await firebase.Child(sabor).PostAsync(new Produto() { Lote = lote, Sabor = sabor, Calda = calda, Dosagem = dosagem, DMaceracao = maceradoem, DP = DP, ValdVenda = valdvenda, Custo = custo, Quantidade = quantidade, Lucro = lucro });
                 return true;
             }
             else
                 return false;
         }
-        public async Task<bool> AddLoteCremoso(string lote, string sabor, string calda, string dosagem, string maceradoem, double valdvenda, double custo, double quantidade, double lucro)
+        public async Task<bool> AddLoteCremoso(string lote, string sabor, string calda, string dosagem, double valdvenda, double custo, double quantidade, double lucro)
         {
             if (await IsLoteEExists(lote) == false && await IsLoteExists(lote, sabor) == false)
             {
-                await firebase.Child("Estoque").PostAsync(new Produto() { Lote = lote, Sabor = sabor, Calda = calda, Dosagem = dosagem, DMaceracao = maceradoem, ValdVenda = valdvenda, Custo = custo, Quantidade = quantidade, Lucro = lucro });
-                await firebase.Child(sabor).PostAsync(new Produto() { Lote = lote, Sabor = sabor, Calda = calda, Dosagem = dosagem, DMaceracao = maceradoem, ValdVenda = valdvenda, Custo = custo, Quantidade = quantidade, Lucro = lucro });
+                await firebase.Child("Estoque").PostAsync(new Produto() { Lote = lote, Sabor = sabor, Calda = calda, Dosagem = dosagem, ValdVenda = valdvenda, Custo = custo, Quantidade = quantidade, Lucro = lucro });
+                await firebase.Child(sabor).PostAsync(new Produto() { Lote = lote, Sabor = sabor, Calda = calda, Dosagem = dosagem, ValdVenda = valdvenda, Custo = custo, Quantidade = quantidade, Lucro = lucro });
                 return true;
             }
             else
@@ -46,6 +46,7 @@ namespace e.Services
                 Calda = item.Object.Calda,
                 Dosagem = item.Object.Dosagem,
                 DMaceracao = item.Object.DMaceracao,
+                DP = item.Object.DP,
                 ValdVenda = item.Object.ValdVenda,
                 Custo = item.Object.Custo,
                 Quantidade = item.Object.Quantidade,
@@ -60,7 +61,6 @@ namespace e.Services
                 Sabor = item.Object.Sabor,
                 Calda = item.Object.Calda,
                 Dosagem = item.Object.Dosagem,
-                DMaceracao = item.Object.DMaceracao,
                 ValdVenda = item.Object.ValdVenda,
                 Custo = item.Object.Custo,
                 Quantidade = item.Object.Quantidade,
@@ -76,6 +76,7 @@ namespace e.Services
                 Calda = item.Object.Calda,
                 Dosagem = item.Object.Dosagem,
                 DMaceracao = item.Object.DMaceracao,
+                DP = item.Object.DP,
                 ValdVenda = item.Object.ValdVenda,
                 Custo = item.Object.Custo,
                 Quantidade = item.Object.Quantidade,
@@ -90,8 +91,9 @@ namespace e.Services
                 Sabor = item.Object.Sabor,
                 Calda = item.Object.Calda,
                 Dosagem = item.Object.Dosagem,
-                DMaceracao = item.Object.DMaceracao,
                 ValdVenda = item.Object.ValdVenda,
+                DMaceracao=item.Object.DMaceracao,
+                DP = item.Object.DP,
                 Custo = item.Object.Custo,
                 Quantidade = item.Object.Quantidade,
                 Lucro = item.Object.Lucro,
@@ -106,6 +108,7 @@ namespace e.Services
                 Calda = item.Object.Calda,
                 Dosagem = item.Object.Dosagem,
                 DMaceracao = item.Object.DMaceracao,
+                DP = item.Object.DP,
                 ValdVenda = item.Object.ValdVenda,
                 Custo = item.Object.Custo,
                 Quantidade = item.Object.Quantidade,
@@ -120,7 +123,6 @@ namespace e.Services
                 Sabor = item.Object.Sabor,
                 Calda = item.Object.Calda,
                 Dosagem = item.Object.Dosagem,
-                DMaceracao = item.Object.DMaceracao,
                 ValdVenda = item.Object.ValdVenda,
                 Custo = item.Object.Custo,
                 Quantidade = item.Object.Quantidade,
@@ -136,6 +138,7 @@ namespace e.Services
                 Calda = item.Object.Calda,
                 Dosagem = item.Object.Dosagem,
                 DMaceracao = item.Object.DMaceracao,
+                DP = item.Object.DP,
                 ValdVenda = item.Object.ValdVenda,
                 Custo = item.Object.Custo,
                 Quantidade = item.Object.Quantidade,
@@ -150,7 +153,6 @@ namespace e.Services
                 Sabor = item.Object.Sabor,
                 Calda = item.Object.Calda,
                 Dosagem = item.Object.Dosagem,
-                DMaceracao = item.Object.DMaceracao,
                 ValdVenda = item.Object.ValdVenda,
                 Custo = item.Object.Custo,
                 Quantidade = item.Object.Quantidade,
@@ -166,6 +168,7 @@ namespace e.Services
                 Calda = item.Object.Calda,
                 Dosagem = item.Object.Dosagem,
                 DMaceracao = item.Object.DMaceracao,
+                DP = item.Object.DP,
                 ValdVenda = item.Object.ValdVenda,
                 Custo = item.Object.Custo,
                 Quantidade = item.Object.Quantidade,
@@ -180,7 +183,6 @@ namespace e.Services
                 Sabor = item.Object.Sabor,
                 Calda = item.Object.Calda,
                 Dosagem = item.Object.Dosagem,
-                DMaceracao = item.Object.DMaceracao,
                 ValdVenda = item.Object.ValdVenda,
                 Custo = item.Object.Custo,
                 Quantidade = item.Object.Quantidade,
@@ -213,14 +215,14 @@ namespace e.Services
                 throw;
             }
         }
-        public async Task UpdateProdutoP(string lote, string sabor, string calda, string dosagem, string maceradoem, double valdvenda, double custo, double quantidade, double lucro)
+        public async Task UpdateProdutoP(string lote, string sabor, string calda, string dosagem, string maceradoem, string DP, double valdvenda, double custo, double quantidade, double lucro)
         {
             try
             {
                 var updtproduto = (await firebase.Child("Produção").OnceAsync<Produto>()).Where(a => a.Object.Lote == lote).FirstOrDefault();
-                await firebase.Child("Produção").Child(updtproduto.Key).PutAsync(new Produto() { Lote = lote, Sabor = sabor, Calda = calda, Dosagem = dosagem, DMaceracao = maceradoem, ValdVenda = valdvenda, Custo = custo, Quantidade = quantidade, Lucro = lucro});
+                await firebase.Child("Produção").Child(updtproduto.Key).PutAsync(new Produto() { Lote = lote, Sabor = sabor, Calda = calda, Dosagem = dosagem, DMaceracao = maceradoem, DP = DP, ValdVenda = valdvenda, Custo = custo, Quantidade = quantidade, Lucro = lucro});
                 var updtprodutops = (await firebase.Child(sabor).OnceAsync<Produto>()).Where(a => a.Object.Lote == lote).FirstOrDefault();
-                await firebase.Child(sabor).Child(updtprodutops.Key).PutAsync(new Produto() { Lote = lote, Sabor = sabor, Calda = calda, Dosagem = dosagem, DMaceracao = maceradoem, ValdVenda = valdvenda, Custo = custo, Quantidade = quantidade, Lucro = lucro });
+                await firebase.Child(sabor).Child(updtprodutops.Key).PutAsync(new Produto() { Lote = lote, Sabor = sabor, Calda = calda, Dosagem = dosagem, DMaceracao = maceradoem, DP = DP, ValdVenda = valdvenda, Custo = custo, Quantidade = quantidade, Lucro = lucro });
             }
 
             catch (Exception ex)
@@ -228,14 +230,14 @@ namespace e.Services
                 DisplayAlert("Erro","Produto não encontrado","Ok");
             }
         }
-        public async Task UpdateProdutoE(string lote, string sabor, string calda, string dosagem, string maceradoem, double valdvenda, double custo, double quantidade, double lucro)
+        public async Task UpdateProdutoE(string lote, string sabor, string calda, string dosagem, string maceradoem, string DP, double valdvenda, double custo, double quantidade, double lucro)
         {
             try
             {
                 var updtproduto = (await firebase.Child("Estoque").OnceAsync<Produto>()).Where(a => a.Object.Lote == lote).FirstOrDefault();
-                await firebase.Child("Estoque").Child(updtproduto.Key).PutAsync(new Produto() { Lote = lote, Sabor = sabor, Calda = calda, Dosagem = dosagem, DMaceracao = maceradoem, ValdVenda = valdvenda, Custo = custo, Quantidade = quantidade, Lucro = lucro });
+                await firebase.Child("Estoque").Child(updtproduto.Key).PutAsync(new Produto() { Lote = lote, Sabor = sabor, Calda = calda, Dosagem = dosagem, ValdVenda = valdvenda, Custo = custo, Quantidade = quantidade, Lucro = lucro });
                 var updtprodutops = (await firebase.Child(sabor).OnceAsync<Produto>()).Where(a => a.Object.Lote == lote).FirstOrDefault();
-                await firebase.Child(sabor).Child(updtprodutops.Key).PutAsync(new Produto() { Lote = lote, Sabor = sabor, Calda = calda, Dosagem = dosagem, DMaceracao = maceradoem, ValdVenda = valdvenda, Custo = custo, Quantidade = quantidade, Lucro = lucro });
+                await firebase.Child(sabor).Child(updtprodutops.Key).PutAsync(new Produto() { Lote = lote, Sabor = sabor, Calda = calda, Dosagem = dosagem, ValdVenda = valdvenda, Custo = custo, Quantidade = quantidade, Lucro = lucro });
             }
 
             catch (Exception ex)

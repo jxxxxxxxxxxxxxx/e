@@ -27,7 +27,8 @@ namespace e.Views
 
         private async Task ExibeProdutosdosagem()
         {
-            var produtos = await read.GetProdutodosagemP(txt_dosagem.Text);
+            string dosagem=PickerD.SelectedItem.ToString();
+            var produtos = await read.GetProdutodosagemP(dosagem);
             ls_produtos.ItemsSource = produtos;
         }
 

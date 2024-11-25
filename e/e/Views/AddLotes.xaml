@@ -25,11 +25,22 @@
         TextColor="Black" BackgroundColor="Transparent"/>
                 <Label Text="Dosagem: " FontSize="Medium"
         TextColor="#f8bdc6"/>
-                <Entry x:Name="txt_dosagem" FontSize="Medium"
-        TextColor="Black" BackgroundColor="Transparent"/>
+                <Picker x:Name="PickerD" BackgroundColor="Transparent" TextColor="#f8bdc6" 
+Title="Selecione uma opção">
+                    <Picker.Items>
+                        <x:String></x:String>
+                        <x:String>50ml</x:String>
+                        <x:String>250ml</x:String>
+                        <x:String>500ml</x:String>
+                        <x:String>1L</x:String>
+                    </Picker.Items>
+                </Picker>
                 <Label Text="Data de Maceração: " FontSize="Medium"
         TextColor="#f8bdc6"/>
                 <DatePicker Format="dd/MM/yyyy" x:Name="dmaceracao" BackgroundColor="Transparent" TextColor="Black"/>
+                <Label Text="Data prevista para finalização: " FontSize="Medium"
+        TextColor="#f8bdc6"/>
+                <DatePicker Format="dd/MM/yyyy" x:Name="dpp" BackgroundColor="Transparent" TextColor="Black"/>
                 <Label Text="Valor de Venda: " FontSize="Medium"
         TextColor="#f8bdc6"/>
                 <Entry x:Name="txt_valdvenda" FontSize="Medium" Keyboard="Numeric"
@@ -43,10 +54,11 @@
                 <Entry x:Name="txt_qtd" FontSize="Medium" Keyboard="Numeric"
         TextColor="Black" BackgroundColor="Transparent"/>
                 <Picker x:Name="Picker" 
-                Title="Selecione uma opção">
+                Title="Selecione uma opção" BackgroundColor="Transparent">
                     <Picker.Items>
-                        <x:String>Cremoso</x:String>
+                        <x:String></x:String>
                         <x:String>Frutal</x:String>
+                        <x:String>Cremoso</x:String>
                     </Picker.Items>
                 </Picker>
                 <Button Text="Adicionar" Clicked="Button_Clicked" FontSize="Medium"

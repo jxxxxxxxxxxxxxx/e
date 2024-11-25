@@ -5,13 +5,12 @@ using Android.Runtime;
 using Android.OS;
 using System.Threading;
 using System.Collections.Generic;
-using e.Locais;
 using AndroidX.Core.OS;
 using Android.Content.Res;
 
 namespace e.Droid
 {
-    [Activity(Label = "EcoPlan", Icon = "@drawable/ggg", Theme = "@style/MainTheme", ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize)]
+    [Activity(Label = "Licoratta", Icon = "@drawable/icon", Theme = "@style/MainTheme", ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize)]
 
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
