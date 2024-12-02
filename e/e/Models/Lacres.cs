@@ -6,8 +6,8 @@ namespace e.Models
 {
     public class Lacres
     {
-
-        public string Dosagem { get; set; }
-        public double Qtd { get; set; }
+        public double Lista { get; set; }
+        public double QtdL50 { get; set; }
+        public double QtdL250ou500 { get; set; }
     }
 }

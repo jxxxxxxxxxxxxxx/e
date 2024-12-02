@@ -46,4 +46,7 @@
     <FlyoutItem Title="Excluir Lote" Icon="sobr.png" Style="{StaticResource style2}">
         <ShellContent ContentTemplate="{DataTemplate pages:ExcluirLote}"/>
     </FlyoutItem>
+    <FlyoutItem Title="Lista de LGPT" Icon="sobr.png" Style="{StaticResource style2}">
+        <ShellContent ContentTemplate="{DataTemplate pages:ListarLGPT}"/>
+    </FlyoutItem>
 </Shell>

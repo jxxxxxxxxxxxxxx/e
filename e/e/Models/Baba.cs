@@ -4,8 +4,8 @@ using System.Text;
 
 namespace e.Models
 {
-    public class Papelaria
+    public class Baba
     {
-        public double QtdEB { get; set; }
+        public double Qtdbaba { get; set; }
     }
 }

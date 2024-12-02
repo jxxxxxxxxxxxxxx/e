@@ -6,7 +6,10 @@ namespace e.Models
 {
     public class Garrafas
     {
-        public string Dosagem { get; set; }
-        public string Qtd { get; set; }
+        public double Lista { get; set; }
+        public double QtdG1 { get; set; }
+        public double QtdG50 { get; set; }
+        public double QtdG250 { get; set; }
+        public double QtdG500 { get; set; }
     }
 }

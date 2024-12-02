@@ -13,19 +13,19 @@ FontSize="Large"
 TextColor="#f8bdc6"/>
                 <Label Text="Lote: " FontSize="Medium"
 TextColor="#f8bdc6"/>
-                <Entry x:Name="txt_lote"  FontSize="Medium" Keyboard="Numeric"
+                <Entry x:Name="txt_lote"  FontSize="Medium" Keyboard="Numeric" TextChanged="OnEntryTextChanged"
 TextColor="Black" BackgroundColor="Transparent"/>
                 <Label Text="Sabor: " FontSize="Medium"
 TextColor="#f8bdc6"/>
-                <Entry x:Name="txt_sabor"  FontSize="Medium"
+                <Entry x:Name="txt_sabor"  FontSize="Medium" TextChanged="OnEntryTextChanged"
 TextColor="Black" BackgroundColor="Transparent"/>
                 <Label Text="Calda: " FontSize="Medium"
 TextColor="#f8bdc6"/>
-                <Entry x:Name="txt_calda"  FontSize="Medium"
+                <Entry x:Name="txt_calda"  FontSize="Medium" TextChanged="OnEntryTextChanged"
 TextColor="Black" BackgroundColor="Transparent"/>
                 <Label Text="Dosagem: " FontSize="Medium"
 TextColor="#f8bdc6"/>
-                <Picker x:Name="PickerD" TextColor="#f8bdc6" 
+                <Picker x:Name="PickerD" TextColor="#f8bdc6" FontSize="Medium"
 Title="Selecione uma opção" BackgroundColor="Transparent">
                     <Picker.Items>
                         <x:String></x:String>
@@ -43,15 +43,15 @@ TextColor="#f8bdc6"/>
                 <DatePicker Format="dd/MM/yyyy" x:Name="dpp" BackgroundColor="Transparent" TextColor="Black"/>
                 <Label Text="Valor de Venda: " FontSize="Medium"
 TextColor="#f8bdc6"/>
-                <Entry x:Name="txt_valdvenda" FontSize="Medium" Keyboard="Numeric"
+                <Entry x:Name="txt_valdvenda" FontSize="Medium" Keyboard="Numeric" 
 TextColor="Black" BackgroundColor="Transparent"/>
                 <Label Text="Custo: " FontSize="Medium"
 TextColor="#f8bdc6"/>
-                <Entry x:Name="txt_custo" FontSize="Medium" Keyboard="Numeric"
+                <Entry x:Name="txt_custo" FontSize="Medium" Keyboard="Numeric" 
 TextColor="Black" BackgroundColor="Transparent"/>
                 <Label Text="Quantidade: " FontSize="Medium"
 TextColor="#f8bdc6"/>
-                <Entry x:Name="txt_qtd" FontSize="Medium" Keyboard="Numeric"
+                <Entry x:Name="txt_qtd" FontSize="Medium" Keyboard="Numeric" 
 TextColor="Black" BackgroundColor="Transparent"/>
                 <StackLayout Orientation="Horizontal">
                     <Button Text="Alterar" Clicked="Button_Clicked" FontSize="Medium"

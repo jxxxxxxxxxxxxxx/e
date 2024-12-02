@@ -11,7 +11,7 @@
         HorizontalOptions="CenterAndExpand"
         FontSize="Large"
         TextColor="#f8bdc6"/>
-                <Entry Placeholder="Digite o sabor" x:Name="txt_sabor" FontSize="Medium" BackgroundColor="Transparent" TextColor="Black"/>
+                <Entry Placeholder="Digite o sabor" x:Name="txt_sabor" FontSize="Medium" TextChanged="OnEntryTextChanged" BackgroundColor="Transparent" TextColor="Black"/>
                 <Button Text="Pesquisar" Clicked="Button_Clicked" BackgroundColor="Transparent"
             FontSize="Large" TextColor="#f8bdc6" CornerRadius="20"/>
                 <Picker x:Name="PickerD" 
@@ -26,7 +26,7 @@ Title="Selecione uma opção" BackgroundColor="Transparent" TextColor="#f8bdc6">
                 </Picker>
                 <Button Text="Pesquisar" Clicked="Button_Clicked_1" BackgroundColor="Transparent"
             FontSize="Large" TextColor="#f8bdc6" CornerRadius="20"/>
-                <Entry Placeholder="Digite a calda" x:Name="txt_calda" FontSize="Medium" BackgroundColor="Transparent" TextColor="Black"/>
+                <Entry Placeholder="Digite a calda" x:Name="txt_calda" TextChanged="OnEntryTextChanged" FontSize="Medium" BackgroundColor="Transparent" TextColor="Black"/>
                 <Button Text="Pesquisar" Clicked="Button_Clicked_2" BackgroundColor="Transparent"
             FontSize="Large" TextColor="#f8bdc6" CornerRadius="20"/>
                 <Label Text="Produtos" FontSize="Medium" HorizontalOptions="Center" TextColor="#f8bdc6"/>

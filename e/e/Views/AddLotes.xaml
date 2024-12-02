@@ -13,19 +13,19 @@
         TextColor="#f8bdc6"/>
                 <Label Text="Lote: " FontSize="Medium"
         TextColor="#f8bdc6"/>
-                <Entry x:Name="txt_lote"  FontSize="Medium" Keyboard="Numeric"
+                <Entry x:Name="txt_lote"  FontSize="Medium" TextChanged="OnEntryTextChanged"
         TextColor="Black" BackgroundColor="Transparent"/>
                 <Label Text="Sabor: " FontSize="Medium"
         TextColor="#f8bdc6"/>
-                <Entry x:Name="txt_sabor"  FontSize="Medium"
+                <Entry x:Name="txt_sabor"  FontSize="Medium" TextChanged="OnEntryTextChanged"
         TextColor="Black" BackgroundColor="Transparent"/>
                 <Label Text="Calda: " FontSize="Medium"
         TextColor="#f8bdc6"/>
-                <Entry x:Name="txt_calda"  FontSize="Medium"
+                <Entry x:Name="txt_calda"  FontSize="Medium" TextChanged="OnEntryTextChanged"
         TextColor="Black" BackgroundColor="Transparent"/>
                 <Label Text="Dosagem: " FontSize="Medium"
         TextColor="#f8bdc6"/>
-                <Picker x:Name="PickerD" BackgroundColor="Transparent" TextColor="#f8bdc6" 
+                <Picker x:Name="PickerD" FontSize="Medium" BackgroundColor="Transparent" TextColor="#f8bdc6" 
 Title="Selecione uma opção">
                     <Picker.Items>
                         <x:String></x:String>
@@ -53,8 +53,8 @@ Title="Selecione uma opção">
         TextColor="#f8bdc6"/>
                 <Entry x:Name="txt_qtd" FontSize="Medium" Keyboard="Numeric"
         TextColor="Black" BackgroundColor="Transparent"/>
-                <Picker x:Name="Picker" 
-                Title="Selecione uma opção" BackgroundColor="Transparent">
+                <Picker x:Name="Picker" FontSize="Medium"
+                Title="Selecione uma opção" BackgroundColor="Transparent" TextColor="#f8bdc6" >
                     <Picker.Items>
                         <x:String></x:String>
                         <x:String>Frutal</x:String>

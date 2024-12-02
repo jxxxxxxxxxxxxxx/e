@@ -13,11 +13,11 @@ FontSize="Large"
 TextColor="#f8bdc6"/>
                 <Label Text="Lote: " FontSize="Medium"
 TextColor="#f8bdc6"/>
-                <Entry x:Name="txt_lote"  FontSize="Medium" Keyboard="Numeric"
+                <Entry x:Name="txt_lote"  FontSize="Medium" Keyboard="Numeric" TextChanged="OnEntryTextChanged"
 TextColor="Black" BackgroundColor="Transparent"/>
                 <Label Text="Sabor: " FontSize="Medium"
 TextColor="#f8bdc6"/>
-                <Entry x:Name="txt_sabor"  FontSize="Medium"
+                <Entry x:Name="txt_sabor"  FontSize="Medium" TextChanged="OnEntryTextChanged"
 TextColor="Black" BackgroundColor="Transparent"/>
                 <StackLayout Orientation="Horizontal">
                 <Button Text="Excluir licores em produção" Clicked="Button_Clicked" FontSize="Medium"

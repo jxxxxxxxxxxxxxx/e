@@ -6,7 +6,11 @@ namespace e.Models
 {
     public class Tampas
     {
-        public string Dosagem { get; set; }
-        public double Qtd { get; set; }
+        public double Lista { get; set; }
+        public double QtdT1 { get; set; }
+        public double QtdT50 { get; set; }
+        public double QtdT250 { get; set; }
+        public double QtdT500 { get; set; }
+        public double QtdTVM { get; set; }
     }
 }

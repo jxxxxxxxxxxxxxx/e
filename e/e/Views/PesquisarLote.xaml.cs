@@ -51,5 +51,19 @@ namespace e.Views
         {
             ExibeProdutoscalda();
         }
+        private void OnEntryTextChanged(object sender, TextChangedEventArgs e)
+        {
+            var entry = sender as Entry;
+
+            if (entry != null && !string.IsNullOrEmpty(entry.Text))
+            {
+                string updatedText = char.ToUpper(entry.Text[0]) + entry.Text.Substring(1);
+
+                if (entry.Text != updatedText)
+                {
+                    entry.Text = updatedText;
+                }
+            }
+        }
     }
 }

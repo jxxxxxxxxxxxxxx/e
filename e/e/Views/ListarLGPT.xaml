@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="e.Views.ListarLGPT"
+             Title="Listar LGPT" BackgroundColor="White">
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical">
+            <StackLayout Padding="30">
+                <Label Text="Listagem de Lacres, Garrafas, Papelaria e Tampas" FontFamily="Times new roman"    
+        VerticalOptions="Center"
+        HorizontalOptions="CenterAndExpand"
+        FontSize="Large"
+        TextColor="#f8bdc6"/>
+                <Button Text="Recarregar" Clicked="Button_Clicked" BackgroundColor="Transparent"
+            FontSize="Large" TextColor="#f8bdc6" CornerRadius="20"/>
+                <Button Text="Recarregar Lacres" Clicked="Button_Clicked1" BackgroundColor="Transparent"
+            FontSize="Large" TextColor="#f8bdc6" CornerRadius="20"/>
+                <Button Text="Recarregar Garrafas" Clicked="Button_Clicked2" BackgroundColor="Transparent"
+            FontSize="Large" TextColor="#f8bdc6" CornerRadius="20"/>
+                <Button Text="Recarregar Papelaria" Clicked="Button_Clicked3" BackgroundColor="Transparent"
+            FontSize="Large" TextColor="#f8bdc6" CornerRadius="20"/>
+                <Button Text="Recarregar Tampas" Clicked="Button_Clicked4" BackgroundColor="Transparent"
+            FontSize="Large" TextColor="#f8bdc6" CornerRadius="20"/>
+                <ListView x:Name="ls_produtos">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ScrollView Orientation="Both">
+                                    <StackLayout HorizontalOptions="Center" Orientation="Vertical">
+                                        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                                            <Label Text="Garrafas 1L: " FontSize="Medium" TextColor="Black"/>
+                                            <Label Text="{Binding QtdG1}" FontSize="Medium" TextColor="Black"/>
+                                        </StackLayout>
+                                        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                                            <Label Text="Garrafas 500ml: " FontSize="Medium" TextColor="Black"/>
+                                            <Label Text="{Binding QtdG500}" FontSize="Medium" TextColor="Black"/>
+                                        </StackLayout>
+                                        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                                            <Label Text="Garrafas 250ml: " FontSize="Medium" TextColor="Black"/>
+                                            <Label Text="{Binding QtdG250}" FontSize="Medium" TextColor="Black"/>
+                                        </StackLayout>
+                                        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                                            <Label Text="Garrafas 50ml: " FontSize="Medium" TextColor="Black"/>
+                                            <Label Text="{Binding QtdG50}" FontSize="Medium" TextColor="Black"/>
+                                        </StackLayout>
+                                        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                                            <Label Text="Tampas 1L: " FontSize="Medium" TextColor="Black"/>
+                                            <Label Text="{Binding QtdT1}" FontSize="Medium" TextColor="Black"/>
+                                        </StackLayout>
+                                        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                                            <Label Text="Tampas 500ml: " FontSize="Medium" TextColor="Black"/>
+                                            <Label Text="{Binding QtdT500}" FontSize="Medium" TextColor="Black"/>
+                                        </StackLayout>
+                                        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                                            <Label Text="Tampas 250ml: " FontSize="Medium" TextColor="Black"/>
+                                            <Label Text="{Binding QtdT250}" FontSize="Medium" TextColor="Black"/>
+                                        </StackLayout>
+                                        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                                            <Label Text="Tampas 50ml: " FontSize="Medium" TextColor="Black"/>
+                                            <Label Text="{Binding QtdT50}" FontSize="Medium" TextColor="Black"/>
+                                        </StackLayout>
+                                        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                                            <Label Text="Vidros de Maceração: " FontSize="Medium" TextColor="Black"/>
+                                            <Label Text="{Binding QtdTVM}" FontSize="Medium" TextColor="Black"/>
+                                        </StackLayout>
+                                        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                                            <Label Text="Lacres 250/500ml: " FontSize="Medium" TextColor="Black"/>
+                                            <Label Text="{Binding QtdL250ou500}" FontSize="Medium" TextColor="Black"/>
+                                        </StackLayout>
+                                        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                                            <Label Text="Lacres 50ml: " FontSize="Medium" TextColor="Black"/>
+                                            <Label Text="{Binding QtdL50}" FontSize="Medium" TextColor="Black"/>
+                                        </StackLayout>
+                                        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                                            <Label Text="Etiquetas Brancas: " FontSize="Medium" TextColor="Black"/>
+                                            <Label Text="{Binding QtdEB}" FontSize="Medium" TextColor="Black"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ScrollView>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
